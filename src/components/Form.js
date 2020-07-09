@@ -41,8 +41,8 @@ class Form extends Component {
                     placeholder="Enter City"
                     onChange={this.handleCityChange}
                 />
-               
-                <button>Get Weather</button>
+               <input type="submit" value="Submit" />
+                {/* <button>Get Weather</button> */}
             </form>
         );
     }

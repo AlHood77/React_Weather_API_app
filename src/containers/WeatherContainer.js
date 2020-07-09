@@ -9,8 +9,7 @@ class WeatherContainer extends Component {
         super(props);
         this.state = { 
             weatherData: [],
-            selectedCity: ""
-            
+            selectedCity: ""     
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
@@ -18,30 +17,20 @@ class WeatherContainer extends Component {
     componentDidMount() {
             fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.selectedCity}&APPID=10e1bea03aeb3faa259cbdf78db00ec8`)
             .then(res => res.json())
-            .then(result => this.setState({ weatherData: result.main }))   
-          
-            
+            .then(result => this.setState({ weatherData: result.main }))            
     }
 
     handleFormSubmit({city}) {
         this.setState({selectedCity: city})
-        
     }
 
-    
-
     render() {
-
-        
-
         return (
-
             <div>
                 <Headings />
                 <Form onFormSubmit={this.handleFormSubmit} />
                 <Weather weather={this.state.weatherData} />
-            </div>
-            
+            </div>  
         );
     }
 }
