@@ -14,11 +14,17 @@ class WeatherContainer extends Component {
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
-    componentDidMount() {
+    fetchData() {
             fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.selectedCity}&APPID=10e1bea03aeb3faa259cbdf78db00ec8`)
             .then(res => res.json())
             .then(result => this.setState({ weatherData: result.main }))            
     }
+
+    componentDidUpdate() {
+        this.fetchData();
+    }
+
+  
 
     handleFormSubmit({city}) {
         this.setState({selectedCity: city})
