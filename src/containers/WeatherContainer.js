@@ -15,9 +15,9 @@ class WeatherContainer extends Component {
     }
 
     fetchData() {
-            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.selectedCity}&APPID=10e1bea03aeb3faa259cbdf78db00ec8`)
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.selectedCity}&units=metric&APPID=10e1bea03aeb3faa259cbdf78db00ec8`)
             .then(res => res.json())
-            .then(result => this.setState({ weatherData: result.main }))            
+            .then(result => this.setState({ weatherData: result}))            
     }
 
     componentDidUpdate() {
