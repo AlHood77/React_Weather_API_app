@@ -4,18 +4,20 @@ import Form from '../components/Form';
 import Weather from '../components/Weather';
 
 
+
 class WeatherContainer extends Component {
     constructor(props) {
         super(props);
         this.state = { 
             weatherData: [],
-            selectedCity: ""     
+            selectedCity: "",
+            selectedCountry: ""
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
     fetchData() {
-            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.selectedCity}&units=metric&APPID=10e1bea03aeb3faa259cbdf78db00ec8`)
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.selectedCity},${this.state.selectedCountry}&units=metric&APPID=10e1bea03aeb3faa259cbdf78db00ec8`)
             .then(res => res.json())
             .then(result => this.setState({ weatherData: result}))            
     }
@@ -26,14 +28,16 @@ class WeatherContainer extends Component {
 
   
 
-    handleFormSubmit({city}) {
-        this.setState({selectedCity: city})
+    handleFormSubmit({city, country}) {
+        this.setState({selectedCity: city, selectedCountry: country})
     }
 
     render() {
         return (
-            <div>
+            <div >
+                
                 <Headings />
+                
                 <Form onFormSubmit={this.handleFormSubmit} />
                 <Weather weather={this.state.weatherData} />
             </div>  

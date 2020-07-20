@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Moment from 'react-moment';
 
 class Headings extends Component {
     constructor(props) {
@@ -7,8 +8,9 @@ class Headings extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="Header">
                 <h1>Weather Finder</h1>
+                <p><Moment format="Do MMMM YYYY"></Moment></p>
                 <p>Check out the weather where you are and more...</p>
             </div>
         );
