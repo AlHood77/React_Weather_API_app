@@ -11,7 +11,8 @@ class WeatherContainer extends Component {
         this.state = { 
             weatherData: [],
             selectedCity: "",
-            selectedCountry: ""
+            selectedCountry: "",
+            temp: ''           
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
@@ -24,6 +25,7 @@ class WeatherContainer extends Component {
 
     componentDidUpdate() {
         this.fetchData();
+        
     }
 
   
@@ -34,12 +36,19 @@ class WeatherContainer extends Component {
 
     render() {
         return (
-            <div >
+            <div className={
+                (typeof this.state.weatherData.main != "undefined")
+                    ? ((this.state.weatherData.main.temp > 16)
+                        ? 'WeatherContainer-warm'
+                        : 'WeatherContainer-cold')
+            : 'WeatherContainer'} >
                 
                 <Headings />
-                
                 <Form onFormSubmit={this.handleFormSubmit} />
-                <Weather weather={this.state.weatherData} />
+                <Weather
+                    weather={this.state.weatherData}
+                    
+                />
             </div>  
         );
     }
