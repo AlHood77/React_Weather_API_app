@@ -3,8 +3,6 @@ import Headings from '../components/Headings';
 import Form from '../components/Form';
 import Weather from '../components/Weather';
 
-
-
 class WeatherContainer extends Component {
     constructor(props) {
         super(props);
@@ -23,12 +21,21 @@ class WeatherContainer extends Component {
             .then(result => this.setState({ weatherData: result}))            
     }
 
-    componentDidUpdate() {
-        this.fetchData();
+
+    // componentDidMount() {
+    //     if (this.state.selectedCity !== this.selectedCity) {
+    //         this.fetchData();    
+    //     }
+               
+    // }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.selectedCity !== prevState.selectedCity) {
+            this.fetchData(this.state.selectedCity);  
+        }
         
     }
 
-  
 
     handleFormSubmit({city, country}) {
         this.setState({selectedCity: city, selectedCountry: country})

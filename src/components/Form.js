@@ -31,8 +31,6 @@ class Form extends Component {
         })
     }
 
-    
-
     handleCityChange(event) {
         this.setState({
             city: event.target.value,
@@ -61,7 +59,6 @@ class Form extends Component {
                     onChange={this.handleCountryChange}
                 />
                <input className="Form-submit" type="submit" value="Get Weather" />
-                {/* <button>Get Weather</button> */}
             </form>
         );
     }

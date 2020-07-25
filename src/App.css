@@ -59,10 +59,16 @@
   cursor: pointer;
 }
 
-.Weather {
+.Weather-wrapper {
   text-align: center;
   margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+
 }
+
+/* .Weather {
+  display: inline-block;
+} */
 
 .Weather-temp {
   margin-top: 10px;
