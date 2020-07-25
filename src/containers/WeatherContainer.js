@@ -45,7 +45,7 @@ class WeatherContainer extends Component {
         return (
             <div className={
                 (typeof this.state.weatherData.main != "undefined")
-                    ? ((this.state.weatherData.main.temp > 16)
+                    ? ((this.state.weatherData.main.temp > 12)
                         ? 'WeatherContainer-warm'
                         : 'WeatherContainer-cold')
             : 'WeatherContainer'} >

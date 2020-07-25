@@ -17,12 +17,15 @@ class Weather extends Component {
             {(typeof this.props.weather.main != "undefined") ? (
                 <div className="Weather">
                     <h1>{this.props.weather.name}, {this.props.weather.sys.country}</h1>
-                    <h2>{Math.round(this.props.weather.main.temp)}°C</h2>
+                        <h2>{Math.round(this.props.weather.main.temp)}°C</h2>
+                        
                     <div className="Weather-temp">
                         <p>Low: {Math.round(this.props.weather.main.temp_min)}°C</p>
                         <p>High: {Math.round(this.props.weather.main.temp_max)}°C</p>
                     </div>
-                    <p>{this.props.weather.weather[0].main}</p>
+                        
+                        <p>{this.props.weather.weather[0].main}</p>
+                        
                     <div className="Weather-sun">
                         <p>Sunrise: <Moment
                             unix

@@ -1,19 +1,19 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Crimson Pro', serif;
 }
 
 .WeatherContainer {
-  background: #e3e3e3;
+  background: url('./components/background.jpg') no-repeat center bottom;
+  background-size: 100%;
   height: 100vh;
 
 }
 
 .WeatherContainer-warm {
   background: url('./components/summer.png');
-
   height: 100vh;
-
 }
 
 .WeatherContainer-cold {
@@ -21,18 +21,25 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  ;
 }
 
 
 .Header {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 70px;
+}
+
+.Header h1 {
+  font-size: 45px;
 }
 
 .Header p {
   margin-top: 20px;
+  font-size: 30px;
+  ;
 }
+
+/* Form Component */
 
 .Form {
   align-items: center;
@@ -44,12 +51,13 @@
 .Form input {
   padding: 15px;
   margin: 10px;
-  width: 200px;
+  width: 270px;
   text-align: center;
   appearance: none;
-  border: none;
+  border: 1px solid black;
   outline: none;
   border-radius: 0px 0px 16px 16px;
+  font-size: 25px;
 
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
@@ -59,16 +67,29 @@
   cursor: pointer;
 }
 
+.Form-submit:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.Form-submit:active {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Weather Component */
+
 .Weather-wrapper {
   text-align: center;
   margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.4);
-
 }
 
-/* .Weather {
+.Weather {
+  background-color: rgba(255, 255, 255, 0.7);
   display: inline-block;
-} */
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
 
 .Weather-temp {
   margin-top: 10px;
@@ -83,4 +104,16 @@
 
 .Weather-sun p {
   margin: 10px;
+}
+
+.Weather h1 {
+  font-size: 50px;
+}
+
+.Weather h2 {
+  font-size: 40px;
+}
+
+.Weather p {
+  font-size: 24px;
 }
